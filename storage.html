@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Local and Session storage</title>
+    </head>
+    <p id ="local">Local Score: </p>
+    <br>
+    <p id="session">Session Score: </p>
+    <br>
+    <button onclick="incrementCount()">Click Me</button>
+    <body>
+        <script>
+            function incrementCount()
+            {
+                if (localStorage.clickcount) {
+                    localStorage.clickcount = Number(localStorage.clickcount)+1;
+                } 
+                else{
+                    localStorage.clickcount = 1;
+                }
+                document.getElementById("local").innerHTML= "Local Score: "+localStorage.clickcount;
+
+                if (sessionStorage.clickcount){
+                   
+                    sessionStorage.clickcount = Number(sessionStorage.clickcount)+1;
+                } 
+                else{
+                    sessionStorage.clickcount = 1;
+                }
+                document.getElementById("session").innerHTML= "Session Score: "+sessionStorage.clickcount;
+            }
+
+        </script>
+    </body>
+</html>
